@@ -1,0 +1,4 @@
+repository "IOT_POC_SmartCity@ChisKien@cloud"
+  path "/"
+    br "/main"
+    co "/main"
