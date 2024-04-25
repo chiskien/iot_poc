@@ -47,7 +47,16 @@ namespace Movements
                 animator.SetBool(IsTurnUpperLeft, true);
             }
 
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                carSpeed += 0.01f;
+            }
 
+            if (Input.GetKeyUp(KeyCode.LeftShift))
+            {
+                carSpeed = 0.01f;
+            }
+            
             transform.position = Vector3.MoveTowards(transform.position, _vector3,
                 1);
         }

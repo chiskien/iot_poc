@@ -50,6 +50,9 @@ TagManager:
   - name: Car
     uniqueID: 643509047
     locked: 0
+  - name: Tree
+    uniqueID: 503574405
+    locked: 0
   - name: Building
     uniqueID: 2069028911
     locked: 0

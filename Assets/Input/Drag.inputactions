@@ -1,0 +1,34 @@
+{
+    "name": "Drag",
+    "maps": [
+        {
+            "name": "Action",
+            "id": "6598a467-0c0f-407e-a073-a04bf2e31239",
+            "actions": [
+                {
+                    "name": "Drag",
+                    "type": "Button",
+                    "id": "c201d287-a4aa-48ee-8db1-18612b3d76d4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "d6d57d71-b5fb-4309-8fb6-152382fc22d8",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Drag",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
