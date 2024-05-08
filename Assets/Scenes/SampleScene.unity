@@ -2095,6 +2095,8 @@ MonoBehaviour:
   NameController: Controller 1
   TagOfTheMQTTReceiver: MQTT_Receiver
   _eventSender: {fileID: 1458445834}
+  car: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!1001 &1445976961
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2146,22 +2148,6 @@ PrefabInstance:
     - target: {fileID: 1397074420482771315, guid: 09db1454970089241be8b2208f62c40b, type: 3}
       propertyPath: m_Name
       value: Car1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1397074420482771315, guid: 09db1454970089241be8b2208f62c40b, type: 3}
-      propertyPath: m_TagString
-      value: MQTT_Receiver
-      objectReference: {fileID: 0}
-    - target: {fileID: 4294281752301024560, guid: 09db1454970089241be8b2208f62c40b, type: 3}
-      propertyPath: autoTest
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4294281752301024560, guid: 09db1454970089241be8b2208f62c40b, type: 3}
-      propertyPath: autoConnect
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4294281752301024560, guid: 09db1454970089241be8b2208f62c40b, type: 3}
-      propertyPath: topicSubscribe
-      value: test
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
