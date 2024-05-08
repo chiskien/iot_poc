@@ -2259,7 +2259,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1699045182}
-        m_TargetAssemblyTypeName: 
+        m_TargetAssemblyTypeName: M2MqttUnity.M2MqttUnityClient, Assembly-CSharp
         m_MethodName: Connect
         m_Mode: 1
         m_Arguments:

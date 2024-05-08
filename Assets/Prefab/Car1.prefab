@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 2079883956664257450}
   - component: {fileID: 6712278484171066942}
   - component: {fileID: 3454305607538571882}
+  - component: {fileID: 4294281752301024560}
   m_Layer: 0
   m_Name: Car1
-  m_TagString: Untagged
+  m_TagString: MQTT_Receiver
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -185,3 +186,27 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4294281752301024560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397074420482771315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d848bf8d3c8d1b4791bf923189621b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brokerAddress: broker.emqx.io
+  brokerPort: 1883
+  isEncrypted: 0
+  connectionDelay: 500
+  timeoutOnConnection: 30000
+  autoConnect: 1
+  mqttUserName: 
+  mqttPassword: 
+  topicSubscribe: test
+  topicPublish: 
+  messagePublish: 
+  autoTest: 0

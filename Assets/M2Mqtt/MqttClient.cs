@@ -185,7 +185,7 @@ namespace uPLibrary.Networking.M2Mqtt
         // session
         private MqttClientSession session;
 
-        // reference to avoid access to singleton via property
+        // reference to avoid access to singleton via propert
         private MqttSettings settings;
 
         // current message identifier generated

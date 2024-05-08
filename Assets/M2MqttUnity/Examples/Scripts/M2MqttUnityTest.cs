@@ -39,7 +39,7 @@ namespace M2MqttUnity.Examples
     /// <summary>
     /// Script for testing M2MQTT with a Unity UI
     /// </summary>
-    public class M2MqttUnityTest : M2MqttUnityClient
+    public class M2MqttUnityTest :  M2MqttUnityClient
     {
         [Tooltip("Set this to true to perform a testing cycle automatically on startup")]
         public bool autoTest = false;

@@ -2048,6 +2048,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1344488123
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1344488124}
+  - component: {fileID: 1344488125}
+  m_Layer: 0
+  m_Name: MQTT_Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1344488124
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344488123}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 27.132917, y: -5.9622793, z: -0.012426572}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1344488125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344488123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f10351bdd1ff0f45b3c6ad899f37597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NameController: Controller 1
+  TagOfTheMQTTReceiver: MQTT_Receiver
+  _eventSender: {fileID: 1458445834}
 --- !u!1001 &1445976961
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2058,11 +2105,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 270579063363217582, guid: 09db1454970089241be8b2208f62c40b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 41.85
+      value: 23.47
       objectReference: {fileID: 0}
     - target: {fileID: 270579063363217582, guid: 09db1454970089241be8b2208f62c40b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.98
+      value: -1.57
       objectReference: {fileID: 0}
     - target: {fileID: 270579063363217582, guid: 09db1454970089241be8b2208f62c40b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2100,6 +2147,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Car1
       objectReference: {fileID: 0}
+    - target: {fileID: 1397074420482771315, guid: 09db1454970089241be8b2208f62c40b, type: 3}
+      propertyPath: m_TagString
+      value: MQTT_Receiver
+      objectReference: {fileID: 0}
+    - target: {fileID: 4294281752301024560, guid: 09db1454970089241be8b2208f62c40b, type: 3}
+      propertyPath: autoTest
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4294281752301024560, guid: 09db1454970089241be8b2208f62c40b, type: 3}
+      propertyPath: autoConnect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4294281752301024560, guid: 09db1454970089241be8b2208f62c40b, type: 3}
+      propertyPath: topicSubscribe
+      value: test
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2110,6 +2173,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1397074420482771315, guid: 09db1454970089241be8b2208f62c40b, type: 3}
   m_PrefabInstance: {fileID: 1445976961}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1458445834 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4294281752301024560, guid: 09db1454970089241be8b2208f62c40b, type: 3}
+  m_PrefabInstance: {fileID: 1445976961}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458445833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d848bf8d3c8d1b4791bf923189621b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1586206126
 GameObject:
   m_ObjectHideFlags: 0
@@ -102566,3 +102640,4 @@ SceneRoots:
   - {fileID: 1783086126}
   - {fileID: 1445976961}
   - {fileID: 1310544281}
+  - {fileID: 1344488124}
