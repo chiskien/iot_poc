@@ -12,7 +12,7 @@ public class MQTTReceiver : M2MqttUnityClient
     // Start is called before the first frame update
     [Header("MQTT Topics")]
     [Tooltip("Set the topic to subscribers. ")]
-    public string topicSubscribe = "test";
+    public string topicSubscribe = "M2MQTT";
     public string topicPublish = "";
     public string messagePublish = "";
 
@@ -25,7 +25,6 @@ public class MQTTReceiver : M2MqttUnityClient
         }
         set
         {
-            if (_message == value) return;
             _message = value;
             OnMessageArrived?.Invoke(_message);
         }
@@ -52,12 +51,10 @@ public class MQTTReceiver : M2MqttUnityClient
     }
     public event OnConnectionSucceedDelegate OnConnectionSucceed;
     public delegate void OnConnectionSucceedDelegate(bool isConnected);
-
-    private readonly List<string> eventMessages = new List<string>();
-
     public void Publish()
     {
-        Client.Publish(topicPublish, System.Text.Encoding.UTF8.GetBytes(messagePublish), MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
+        Client.Publish(topicPublish, System.Text.Encoding.UTF8.GetBytes(messagePublish),
+            MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
         Debug.Log("Test message published");
     }
     protected override void OnConnecting()
@@ -100,9 +97,8 @@ public class MQTTReceiver : M2MqttUnityClient
     {
         Message = System.Text.Encoding.UTF8.GetString(msg);
         Debug.Log("Received: " + Message);
-        Debug.Log("from topic: " + _message);
 
-        StoreMessage(Message);
+        // StoreMessage(Message);
         if (topic == topicSubscribe)
         {
             if (autoTest)
@@ -113,14 +109,14 @@ public class MQTTReceiver : M2MqttUnityClient
         }
     }
 
-    private void StoreMessage(string message)
-    {
-        if (eventMessages.Count > 50)
-        {
-            eventMessages.Clear();
-        }
-        eventMessages.Add(message);
-    }
+    // private void StoreMessage(string message)
+    // {
+    //     if (eventMessages.Count > 50)
+    //     {
+    //         eventMessages.Clear();
+    //     }
+    //     eventMessages.Add(message);
+    // }
 
     protected override void Update()
     {
