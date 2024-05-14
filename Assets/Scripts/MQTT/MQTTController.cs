@@ -118,6 +118,15 @@ namespace MQTT
             {
                 _carSpeed = 0f;
             }
+            if (newMsg.Equals(Operation.BOOST_SPEED))
+            {
+                float i = 0;
+                while (i < 5)
+                {
+                    _carSpeed += i;
+                    i++;
+                }
+            }
         }
         private void Update()
         {
