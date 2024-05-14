@@ -24,11 +24,12 @@ namespace Movements
         private static readonly int IsDown = Animator.StringToHash("IsDown");
 
         public float CarSpeed { get => carSpeed; set => carSpeed = value; }
+        public Vector2 Movement { get => movement; set => movement = value; }
 
         private void Awake()
         {
-            CarSpeed = 1f;
-            initialSpeed = 1f;
+            CarSpeed = 2f;
+            initialSpeed = 2f;
             isOpen = "false";
         }
         void Start()
@@ -39,16 +40,16 @@ namespace Movements
         // Update is called once per frame
         private void FixedUpdate()
         {
-            rigidbody.MovePosition(rigidbody.position + CarSpeed * Time.fixedDeltaTime * movement);
+            rigidbody.MovePosition(rigidbody.position + CarSpeed * Time.fixedDeltaTime * Movement);
         }
         void Update()
         {
 
             movement.x = Input.GetAxisRaw("Horizontal");
             movement.y = Input.GetAxisRaw("Vertical");
-            animator.SetFloat(Horizontal, movement.x);
-            animator.SetFloat(Vertical, movement.y);
-            animator.SetFloat(Speed, movement.sqrMagnitude);
+            animator.SetFloat(Horizontal, Movement.x);
+            animator.SetFloat(Vertical, Movement.y);
+            animator.SetFloat(Speed, Movement.sqrMagnitude);
             if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
             {
                 animator.SetBool(IsLeft, false);

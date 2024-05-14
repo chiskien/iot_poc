@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using Movements;
 
 using UnityEngine;
@@ -15,26 +16,34 @@ namespace MQTT
         public string TagOfTheMQTTReceiver = "MQTT_Receiver";
 
         private MQTTReceiver _eventSender;
-        private CarMovement _carMovement;
-        [SerializeField]
-        private GameObject car;
-        private string isOpen;
 
         [SerializeField]
-        private float carSpeed;
-        private Animator animator;
+        private GameObject car;
+        private string _isOpen;
+
+        [SerializeField]
+        private float _carSpeed;
+        private Animator _animator;
         private Rigidbody2D _rigidbody2D;
+        private Vector2 _movement;
         private static readonly int IsOpenDoor = Animator.StringToHash("IsOpenDoor");
+        private static readonly int IsRight = Animator.StringToHash("IsRight");
+        private static readonly int IsLeft = Animator.StringToHash("IsLeft");
+        private static readonly int IsUp = Animator.StringToHash("IsUp");
+        private static readonly int IsDown = Animator.StringToHash("IsDown");
+        private static readonly int Speed = Animator.StringToHash("Speed");
+        private static readonly int Horizontal = Animator.StringToHash("Horizontal");
+        private static readonly int Vertical = Animator.StringToHash("Vertical");
 
         // Start is called before the first frame update
         private void Awake()
         {
 
-            isOpen = "false";
+            _isOpen = "false";
+            _carSpeed = 2f;
             _eventSender = car.GetComponent<MQTTReceiver>();
-            _carMovement = car.GetComponent<CarMovement>();
             _rigidbody2D = car.GetComponent<Rigidbody2D>();
-            animator = car.GetComponent<Animator>();
+            _animator = car.GetComponent<Animator>();
         }
         void Start()
         {
@@ -46,27 +55,80 @@ namespace MQTT
         }
         private void OnMessageArrivedHandler(string newMsg)
         {
-            Debug.Log(newMsg);
+
             if (newMsg.Equals(Operation.OPEN_DOOR))
             {
-                if (isOpen.Equals("false"))
+                if (_isOpen.Equals("false"))
                 {
-                    animator.SetBool(IsOpenDoor, true);
-                    isOpen = "true";
+                    _animator.SetBool(IsOpenDoor, true);
+                    _isOpen = "true";
                 }
                 else
                 {
-                    animator.SetBool(IsOpenDoor, false);
-                    isOpen = "false";
+                    _animator.SetBool(IsOpenDoor, false);
+                    _isOpen = "false";
                 }
             }
             if (newMsg.Equals(Operation.CLOSE_DOOR))
             {
-                animator.SetBool(IsOpenDoor, false);
-                isOpen = "false";
+                _animator.SetBool(IsOpenDoor, false);
+                _isOpen = "false";
+            }
+            if (newMsg.Equals(Operation.GO_RIGHT))
+            {
+                _carSpeed = 2f;
+                _movement.x = 1;
+                _movement.y = 0;
+                _animator.SetBool(IsLeft, false);
+                _animator.SetBool(IsRight, true);
+                _animator.SetBool(IsUp, false);
+                _animator.SetBool(IsDown, false);
+            }
+            if (newMsg.Equals(Operation.GO_LEFT))
+            {
+                _carSpeed = 2f;
+                _movement.x = -1;
+                _movement.y = 0;
+                _animator.SetBool(IsLeft, true);
+                _animator.SetBool(IsRight, false);
+                _animator.SetBool(IsUp, false);
+                _animator.SetBool(IsDown, false);
+            }
+            if (newMsg.Equals(Operation.GO_UP))
+            {
+                _carSpeed = 2f;
+                _movement.y = 1;
+                _movement.x = 0;
+                _animator.SetBool(IsLeft, false);
+                _animator.SetBool(IsRight, false);
+                _animator.SetBool(IsUp, true);
+                _animator.SetBool(IsDown, false);
+            }
+            if (newMsg.Equals(Operation.GO_DOWN))
+            {
+                _carSpeed = 2f;
+                _movement.y = -1;
+                _movement.x = 0;
+                _animator.SetBool(IsLeft, false);
+                _animator.SetBool(IsRight, false);
+                _animator.SetBool(IsUp, false);
+                _animator.SetBool(IsDown, true);
+            }
+            if (newMsg.Equals(Operation.STOP))
+            {
+                _carSpeed = 0f;
             }
         }
-
+        private void Update()
+        {
+            _animator.SetFloat(Horizontal, _movement.x);
+            _animator.SetFloat(Vertical, _movement.y);
+            _animator.SetFloat(Speed, _movement.sqrMagnitude);
+        }
+        private void FixedUpdate()
+        {
+            _rigidbody2D.MovePosition(_rigidbody2D.position + _carSpeed * Time.fixedDeltaTime * _movement);
+        }
         // Update is called once per frame
     }
 }

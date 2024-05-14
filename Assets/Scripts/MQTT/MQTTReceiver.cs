@@ -82,17 +82,14 @@ public class MQTTReceiver : M2MqttUnityClient
     protected override void SubscribeTopics()
     {
         Client.Subscribe(new string[] { topicSubscribe }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
-        Debug.Log("Subscribe to topic");
+        Debug.Log("Subscribe to topic" + topicSubscribe);
     }
 
     protected override void UnsubscribeTopics()
     {
         Client.Unsubscribe(new string[] { topicSubscribe });
     }
-    protected override void Start()
-    {
-        base.Start();
-    }
+
     protected override void DecodeMessage(string topic, byte[] msg)
     {
         Message = System.Text.Encoding.UTF8.GetString(msg);
@@ -108,7 +105,10 @@ public class MQTTReceiver : M2MqttUnityClient
             }
         }
     }
-
+    protected override void Start()
+    {
+        base.Start();
+    }
     // private void StoreMessage(string message)
     // {
     //     if (eventMessages.Count > 50)
