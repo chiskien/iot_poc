@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 namespace Movements
 {
-    public class Move : MonoBehaviour
+    public class CarMovement : MonoBehaviour
     {
         // Start is called before the first frame update
         [SerializeField] private Animator animator;
@@ -23,9 +23,11 @@ namespace Movements
         private static readonly int IsUp = Animator.StringToHash("IsUp");
         private static readonly int IsDown = Animator.StringToHash("IsDown");
 
+        public float CarSpeed { get => carSpeed; set => carSpeed = value; }
+
         private void Awake()
         {
-            carSpeed = 1f;
+            CarSpeed = 1f;
             initialSpeed = 1f;
             isOpen = "false";
         }
@@ -37,8 +39,7 @@ namespace Movements
         // Update is called once per frame
         private void FixedUpdate()
         {
-
-            rigidbody.MovePosition(rigidbody.position + carSpeed * Time.fixedDeltaTime * movement);
+            rigidbody.MovePosition(rigidbody.position + CarSpeed * Time.fixedDeltaTime * movement);
         }
         void Update()
         {
@@ -78,11 +79,11 @@ namespace Movements
             }
             if (Input.GetKey(KeyCode.LeftShift))
             {
-                carSpeed += 0.5f;
+                CarSpeed += 0.5f;
             }
             if (Input.GetKeyUp(KeyCode.LeftShift))
             {
-                carSpeed = initialSpeed;
+                CarSpeed = initialSpeed;
             }
             if (Input.GetKeyDown(KeyCode.G))
             {
