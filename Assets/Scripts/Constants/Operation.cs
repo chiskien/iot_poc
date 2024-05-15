@@ -16,4 +16,5 @@ public class Operation
     public const string GO_UP = "move_up";
     public const string GO_DOWN = "move_down";
     public const string BOOST_SPEED = "boost_speed";
+
 }

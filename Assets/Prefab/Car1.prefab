@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 270579063363217582}
   - component: {fileID: 8338798629529465017}
-  - component: {fileID: 4577668029092217559}
   - component: {fileID: 2079883956664257450}
   - component: {fileID: 6712278484171066942}
   - component: {fileID: 3454305607538571882}
@@ -89,20 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4577668029092217559
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1397074420482771315}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 799afa6ab0b1d8a4285d6442eff9f51a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 3454305607538571882}
-  carSpeed: 1
 --- !u!50 &2079883956664257450
 Rigidbody2D:
   serializedVersion: 4
