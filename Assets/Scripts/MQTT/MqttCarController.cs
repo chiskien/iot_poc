@@ -10,12 +10,12 @@ using UnityEngine;
 namespace MQTT
 {
 
-    public class MQTTController : MonoBehaviour
+    public class MqttCarController : MonoBehaviour
     {
         public string NameController = "Controller 1";
         public string TagOfTheMQTTReceiver = "MQTT_Receiver";
 
-        private MQTTReceiver _eventSender;
+        private MqttCarReceiver _eventSender;
 
         [SerializeField]
         private GameObject car;
@@ -41,7 +41,7 @@ namespace MQTT
 
             _isOpen = "false";
             _carSpeed = 2f;
-            _eventSender = car.GetComponent<MQTTReceiver>();
+            _eventSender = car.GetComponent<MqttCarReceiver>();
             _rigidbody2D = car.GetComponent<Rigidbody2D>();
             _animator = car.GetComponent<Animator>();
         }
@@ -56,7 +56,7 @@ namespace MQTT
         private void OnMessageArrivedHandler(string newMsg)
         {
 
-            if (newMsg.Equals(Operation.OPEN_DOOR))
+            if (newMsg.Equals(Command.OPEN_DOOR))
             {
                 if (_isOpen.Equals("false"))
                 {
@@ -69,12 +69,12 @@ namespace MQTT
                     _isOpen = "false";
                 }
             }
-            if (newMsg.Equals(Operation.CLOSE_DOOR))
+            if (newMsg.Equals(Command.CLOSE_DOOR))
             {
                 _animator.SetBool(IsOpenDoor, false);
                 _isOpen = "false";
             }
-            if (newMsg.Equals(Operation.GO_RIGHT))
+            if (newMsg.Equals(Command.GO_RIGHT))
             {
                 _carSpeed = 2f;
                 _movement.x = 1;
@@ -84,7 +84,7 @@ namespace MQTT
                 _animator.SetBool(IsUp, false);
                 _animator.SetBool(IsDown, false);
             }
-            if (newMsg.Equals(Operation.GO_LEFT))
+            if (newMsg.Equals(Command.GO_LEFT))
             {
                 _carSpeed = 2f;
                 _movement.x = -1;
@@ -94,7 +94,7 @@ namespace MQTT
                 _animator.SetBool(IsUp, false);
                 _animator.SetBool(IsDown, false);
             }
-            if (newMsg.Equals(Operation.GO_UP))
+            if (newMsg.Equals(Command.GO_UP))
             {
                 _carSpeed = 2f;
                 _movement.y = 1;
@@ -104,7 +104,7 @@ namespace MQTT
                 _animator.SetBool(IsUp, true);
                 _animator.SetBool(IsDown, false);
             }
-            if (newMsg.Equals(Operation.GO_DOWN))
+            if (newMsg.Equals(Command.GO_DOWN))
             {
                 _carSpeed = 2f;
                 _movement.y = -1;
@@ -114,11 +114,11 @@ namespace MQTT
                 _animator.SetBool(IsUp, false);
                 _animator.SetBool(IsDown, true);
             }
-            if (newMsg.Equals(Operation.STOP))
+            if (newMsg.Equals(Command.STOP))
             {
                 _carSpeed = 0f;
             }
-            if (newMsg.Equals(Operation.BOOST_SPEED))
+            if (newMsg.Equals(Command.BOOST_SPEED))
             {
                 float i = 0;
                 while (i < 5)

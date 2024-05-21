@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Operation
+public class Command
 {
     public const string CLOSE_DOOR = "close_door";
     public const string OPEN_DOOR = "open_door";
@@ -11,6 +11,7 @@ public class Operation
     public const string FLASH = "flash";
     public const string SPEED_LIMIT = "speed_limit";
     public const string BOUNDARY_ALERT = "boundary_alert";
+    public const string TRIP_STATISTICS = "trip_statistics";
     public const string GO_RIGHT = "move_right";
     public const string GO_LEFT = "move_left";
     public const string GO_UP = "move_up";

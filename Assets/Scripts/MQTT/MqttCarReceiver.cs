@@ -7,12 +7,12 @@ using UnityEngine;
 using uPLibrary.Networking.M2Mqtt;
 using uPLibrary.Networking.M2Mqtt.Messages;
 
-public class MQTTReceiver : M2MqttUnityClient
+public class MqttCarReceiver : M2MqttUnityClient
 {
     // Start is called before the first frame update
     [Header("MQTT Topics")]
     [Tooltip("Set the topic to subscribers. ")]
-    public string topicSubscribe = "M2MQTT";
+    public string topicSubscribe = "M2MQTT/car";
     public string topicPublish = "";
     public string messagePublish = "";
 
@@ -32,7 +32,7 @@ public class MQTTReceiver : M2MqttUnityClient
     // The variables msg and isConnected use the C# properties GET/SET. Instead of using an Update function or a Coroutine, by using these properties it is possible to create a more efficient event system.
 
     public event OnMessageArrivedDelegate OnMessageArrived;
-    public delegate void OnMessageArrivedDelegate(string newMessage);
+    public delegate void OnMessageArrivedDelegate(string newMessage); //change the input according to the message received  
     public bool autoTest = false;
     private bool _isConnected;
 
