@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - MQTT_Receiver
+  - TF1
+  - TF2
   layers:
   - Default
   - TransparentFX

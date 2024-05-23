@@ -1,6 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Runtime.Serialization.Json;
+using System.Text;
 using M2MqttUnity;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
@@ -92,7 +95,8 @@ public class MqttCarReceiver : M2MqttUnityClient
 
     protected override void DecodeMessage(string topic, byte[] msg)
     {
-        Message = System.Text.Encoding.UTF8.GetString(msg);
+        Message = Encoding.UTF8.GetString(msg);
+
         Debug.Log("Received: " + Message);
 
         // StoreMessage(Message);
@@ -109,15 +113,6 @@ public class MqttCarReceiver : M2MqttUnityClient
     {
         base.Start();
     }
-    // private void StoreMessage(string message)
-    // {
-    //     if (eventMessages.Count > 50)
-    //     {
-    //         eventMessages.Clear();
-    //     }
-    //     eventMessages.Add(message);
-    // }
-
     protected override void Update()
     {
         base.Update(); // call ProcessMqttEvents()
