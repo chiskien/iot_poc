@@ -743,10 +743,10 @@ TextureImporter:
       name: Buses_48x48_1_30
       rect:
         serializedVersion: 2
-        x: 47
-        y: 2732
-        width: 6724
-        height: 194
+        x: 50
+        y: 2736
+        width: 334
+        height: 184
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -807,9 +807,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 814
-        y: 2108
+        y: 2400
         width: 336
-        height: 585
+        height: 293
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -828,9 +828,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1200
-        y: 2108
+        y: 2399
         width: 293
-        height: 599
+        height: 308
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -849,9 +849,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1629
-        y: 2063
+        y: 2404
         width: 220
-        height: 660
+        height: 315
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1852,6 +1852,111 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Buses_48x48_1_83
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 2113
+        width: 321
+        height: 281
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da46b27b71b39ed48831471f2317fe39
+      internalID: 59150020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buses_48x48_1_84
+      rect:
+        serializedVersion: 2
+        x: 1199
+        y: 2122
+        width: 282
+        height: 269
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7e908fe5abbb5c48a15b77a6ec46b20
+      internalID: 2007937983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buses_48x48_1_85
+      rect:
+        serializedVersion: 2
+        x: 1629
+        y: 2065
+        width: 207
+        height: 330
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0efcc435933787545b99b188f6ba69aa
+      internalID: -993265249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buses_48x48_1_86
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 2736
+        width: 322
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a61e4787eabed24e99c0e403671aa75
+      internalID: -2142471262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buses_48x48_1_87
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 2733
+        width: 329
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02fc6e6061f10da4d846bf7743c7652f
+      internalID: 543171235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1945,6 +2050,11 @@ TextureImporter:
       Buses_48x48_1_80: -933989174
       Buses_48x48_1_81: 340336360
       Buses_48x48_1_82: -1073912386
+      Buses_48x48_1_83: 59150020
+      Buses_48x48_1_84: 2007937983
+      Buses_48x48_1_85: -993265249
+      Buses_48x48_1_86: -2142471262
+      Buses_48x48_1_87: 543171235
       Buses_48x48_1_9: 1379116753
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
