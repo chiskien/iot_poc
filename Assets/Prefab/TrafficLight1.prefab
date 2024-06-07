@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 7298530595846401900}
   - component: {fileID: 6996944835422146687}
   - component: {fileID: 5531259505523506425}
+  - component: {fileID: 2865639181309351724}
   m_Layer: 0
   m_Name: TrafficLight1
-  m_TagString: Untagged
+  m_TagString: TF1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -119,3 +120,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ff1e4112e4a08442be2e18b57891078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2865639181309351724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6639461849335817281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a13d7e6476e57a49821f94cc2511050, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brokerAddress: broker.emqx.io
+  brokerPort: 1883
+  isEncrypted: 0
+  connectionDelay: 500
+  timeoutOnConnection: 30000
+  autoConnect: 0
+  mqttUserName: 
+  mqttPassword: 
+  topicSubscribe: M2MQTT/trafficlight
+  topicPublish: 
+  messagePublish: 

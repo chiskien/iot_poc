@@ -59,3 +59,6 @@ TagManager:
   - name: Building
     uniqueID: 2069028911
     locked: 0
+  - name: TrafficLight
+    uniqueID: 289844455
+    locked: 0

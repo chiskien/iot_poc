@@ -18,10 +18,6 @@ public class MqttTrafficLightController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-
-    }
     private void OnMessageArrivedHandler(TrafficlightMsg trafficlightMsg)
     {
         Debug.Log(trafficlightMsg.ToString());
