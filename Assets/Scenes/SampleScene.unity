@@ -1607,6 +1607,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f6e690323d084e408f0563cc731e196, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _eventSender: {fileID: 0}
+  TagOfTheMQTTReceiver: 1
+  trafficLightGameObject: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!4 &906504534
 Transform:
   m_ObjectHideFlags: 0
@@ -2355,11 +2359,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 270579063363217582, guid: 09db1454970089241be8b2208f62c40b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 22.83
+      value: 24.5
       objectReference: {fileID: 0}
     - target: {fileID: 270579063363217582, guid: 09db1454970089241be8b2208f62c40b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.81
+      value: -3.08
       objectReference: {fileID: 0}
     - target: {fileID: 270579063363217582, guid: 09db1454970089241be8b2208f62c40b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -118522,21 +118526,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: TrafficLight1
       objectReference: {fileID: 0}
-    - target: {fileID: 7298530595846401900, guid: 88ec5c4303c88d44d9f4b01d22a85bee, type: 3}
-      propertyPath: m_SortingLayer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7298530595846401900, guid: 88ec5c4303c88d44d9f4b01d22a85bee, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 289844455
-      objectReference: {fileID: 0}
     - target: {fileID: 9216826386860968061, guid: 88ec5c4303c88d44d9f4b01d22a85bee, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14.73
+      value: 15.21
       objectReference: {fileID: 0}
     - target: {fileID: 9216826386860968061, guid: 88ec5c4303c88d44d9f4b01d22a85bee, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.68
+      value: 4.56
       objectReference: {fileID: 0}
     - target: {fileID: 9216826386860968061, guid: 88ec5c4303c88d44d9f4b01d22a85bee, type: 3}
       propertyPath: m_LocalPosition.z
@@ -118570,7 +118566,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2865639181309351724, guid: 88ec5c4303c88d44d9f4b01d22a85bee, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

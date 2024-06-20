@@ -56,7 +56,7 @@ public class MqttCarReceiver : M2MqttUnityClient
     public delegate void OnConnectionSucceedDelegate(bool isConnected);
     public void Publish()
     {
-        Client.Publish(topicPublish, System.Text.Encoding.UTF8.GetBytes(messagePublish),
+        Client.Publish(topicPublish, Encoding.UTF8.GetBytes(messagePublish),
             MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
         Debug.Log("Test message published");
     }
@@ -96,7 +96,6 @@ public class MqttCarReceiver : M2MqttUnityClient
     protected override void DecodeMessage(string topic, byte[] msg)
     {
         Message = Encoding.UTF8.GetString(msg);
-
         Debug.Log("Received: " + Message);
 
         // StoreMessage(Message);
