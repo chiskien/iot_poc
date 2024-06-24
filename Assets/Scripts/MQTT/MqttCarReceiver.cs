@@ -56,8 +56,7 @@ public class MqttCarReceiver : M2MqttUnityClient
     public delegate void OnConnectionSucceedDelegate(bool isConnected);
     public void Publish()
     {
-        Client.Publish(topicPublish, Encoding.UTF8.GetBytes(messagePublish),
-            MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
+        Client.Publish(topicPublish, Encoding.UTF8.GetBytes(messagePublish), MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
         Debug.Log("Test message published");
     }
     protected override void OnConnecting()
@@ -95,18 +94,20 @@ public class MqttCarReceiver : M2MqttUnityClient
 
     protected override void DecodeMessage(string topic, byte[] msg)
     {
-        Message = Encoding.UTF8.GetString(msg);
-        Debug.Log("Received: " + Message);
+        string jsonMessage = Encoding.UTF8.GetString(msg);
+        CarMsg carMsg = JsonUtility.FromJson<CarMsg>(jsonMessage);
+        Message = carMsg.action;
+        Debug.Log("Car msg: " + carMsg);
 
         // StoreMessage(Message);
-        if (topic == topicSubscribe)
-        {
-            if (autoTest)
-            {
-                autoTest = false;
-                Disconnect();
-            }
-        }
+        // if (topic == topicSubscribe)
+        // {
+        //     if (autoTest)
+        //     {
+        //         autoTest = false;
+        //         Disconnect();
+        //     }
+        // }
     }
     protected override void Start()
     {

@@ -1607,10 +1607,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f6e690323d084e408f0563cc731e196, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _eventSender: {fileID: 0}
-  TagOfTheMQTTReceiver: 1
-  trafficLightGameObject: {fileID: 0}
-  animator: {fileID: 0}
 --- !u!4 &906504534
 Transform:
   m_ObjectHideFlags: 0
@@ -2359,11 +2355,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 270579063363217582, guid: 09db1454970089241be8b2208f62c40b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 24.5
+      value: 24.94
       objectReference: {fileID: 0}
     - target: {fileID: 270579063363217582, guid: 09db1454970089241be8b2208f62c40b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.08
+      value: -2.7
       objectReference: {fileID: 0}
     - target: {fileID: 270579063363217582, guid: 09db1454970089241be8b2208f62c40b, type: 3}
       propertyPath: m_LocalPosition.z
